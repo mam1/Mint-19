@@ -1,0 +1,42 @@
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# / was on /dev/sda1 during installationass
+#
+# <file system>                             <mount point>    <type> <options>          <dump><pass>
+
+# monut root and swap
+UUID=a5d9dfcf-8f57-4274-a16d-6713514a515d  /                  ext4  errors=remount-ro     0   1
+UUID=b95249b8-9c2f-4984-906b-5850dd9434f4  none				  swap 	sw                    0   0
+
+# mount primary disks
+UUID=c779b7ed-751e-4927-9f44-113da54db6cd  /media/BlackHole   ext4	auto
+UUID=6ae6e1fe-356a-49ba-8da1-d80bc1b02e27  /media/Abyss       ext4  auto
+UUID=201f047f-b2bc-445d-9ca0-e849f01d1e37  /media/Images      ext4  auto
+UUID=43717e92-a042-449a-912c-9d089cd3383b  /media/LogsBkup    ext4  auto
+
+# do not mount backup disks
+UUID=6bb923c4-6ee3-4623-bdf9-a3a9d06a6b9b  /mnt/BlackHoleBkp  ext4	noauto
+UUID=affc284d-5f53-4353-81d3-eb22f45856ad  /mnt/AbyssBkp	  ext4	noauto
+UUID=08a92f0d-d172-3757-afd4-99c58787f43f  /mnt/IimaesBkp	  ext4	noauto
+LogsBkup
+
+
+# /dev/sda1: UUID="a5d9dfcf-8f57-4274-a16d-6713514a515d" TYPE="ext4" PARTUUID="ec62c4cc-01"
+
+# /dev/sdb1: LABEL="BlackHole" UUID="c779b7ed-751e-4927-9f44-113da54db6cd" TYPE="ext4" PARTUUID="2ddea0a8-258b-4da7-9919-e5394d377e33"
+# /dev/sdc1: LABEL="Abyss" UUID="6ae6e1fe-356a-49ba-8da1-d80bc1b02e27" TYPE="ext4" PARTLABEL="Abyss" PARTUUID="00761120-1d27-45b7-b667-da5607da31e6"
+# /dev/sdd1: LABEL="BlackHole_bkup" UUID="6bb923c4-6ee3-4623-bdf9-a3a9d06a6b9b" TYPE="ext4" PARTUUID="1dc0cd42-9257-47c7-abf4-bc0c4b0bafb6"
+# /dev/sde1: LABEL="Abyss_bkup" UUID="affc284d-5f53-4353-81d3-eb22f45856ad" TYPE="ext4" PARTLABEL="Abyss_bkup" PARTUUID="5dbc6fc6-feee-4690-b00f-3305d8fa62d4"
+
+# /dev/sdf1: UUID="2B5A-18BA" TYPE="vfat" PARTLABEL="EFI System Partition" PARTUUID="be797ddd-b929-4510-8622-ca013558cd8f"
+# /dev/sdf2: UUID="1c14dd87-6ae9-4fb7-a6c6-74398c52feca" TYPE="ext4" PARTUUID="4c4863ee-f34d-483b-a653-1faf16e35b43"
+# /dev/sdf3: UUID="b95249b8-9c2f-4984-906b-5850dd9434f4" TYPE="swap" PARTUUID="d3b0dd44-19a6-4512-9f01-3c9c69296049"
+
+# /dev/sdf4: LABEL="Images" UUID="201f047f-b2bc-445d-9ca0-e849f01d1e37" TYPE="ext4" PARTLABEL="clonezilla_1" PARTUUID="c7856079-1683-4647-9fc3-6f57cd540184"
+# /dev/sdg1: LABEL="Logs" UUID="43717e92-a042-449a-912c-9d089cd3383b" TYPE="ext4" PARTLABEL="Logs" PARTUUID="7731c5ea-54d7-491c-9622-e1093f30b9bb"
+# /dev/sdh1: LABEL="EFI" UUID="67E3-17ED" TYPE="vfat" PARTLABEL="EFI System Partition" PARTUUID="e7528eb7-3e4d-4e8e-848a-b950dc7da757"
+# /dev/sdh2: UUID="08a92f0d-d172-3757-afd4-99c58787f43f" LABEL="RAID backup" TYPE="hfsplus" PARTUUID="be6b5e05-50c1-4d15-a4e0-df2603e4618c"
