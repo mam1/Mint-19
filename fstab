@@ -15,11 +15,11 @@ UUID=a1dfa8f5-c9f8-47b2-8359-d03067cd9117  /                  ext4  errors=remou
 # mount primary disks
 UUID=c779b7ed-751e-4927-9f44-113da54db6cd  /media/BlackHole   ext4	auto,user			  0   2
 UUID=6ae6e1fe-356a-49ba-8da1-d80bc1b02e27  /media/Abyss       ext4  auto,user			  0   2
-UUID=201f047f-b2bc-445d-9ca0-e849f01d1e37  /media/Images      ext4  auto,user			  0   2
+UUID=48d3ba3f-65eb-4ef1-a143-246e89f1988c  /media/Images      ext4  auto,user			  0   2
 UUID=43717e92-a042-449a-912c-9d089cd3383b  /media/Logs        ext4  auto,user			  0   2
 
-# do not mount backup disks
+# # do not mount backup disks
 UUID=6bb923c4-6ee3-4623-bdf9-a3a9d06a6b9b  /mnt/BlackHoleBkp  ext4	noauto,user			  0   2
 UUID=affc284d-5f53-4353-81d3-eb22f45856ad  /mnt/AbyssBkp	  ext4	noauto,user			  0   2
-UUID=08a92f0d-d172-3757-afd4-99c58787f43f  /mnt/ImagesBkp	  ext4	noauto,user			  0   2
-#LogsBkup
+UUID=8b94a070-47f6-42e1-b118-977ee24cc3ea  /mnt/ImagesBkp	  ext4	noauto,user			  0   2
+# #LogsBkup
