@@ -1,0 +1,27 @@
+#!/bin/bash
+# push the routers external IP address to dropbox
+# restart Mint box if no internet connection 
+# reconnect to the vpn if not connected
+
+APP="ip2"
+VER="0.0"
+DATE="$(date +'%m/%d/%Y')"
+TIME="$(date +'%r')" 
+
+echo -e "\n\r"$APP $VER "run at" $TIME "on" $DATE 
+
+# reconnect the VPN if necessay
+if [[ "$(expressvpn status)" = "Not connected." ]]; then
+    echo  -e "vpn is not connected - reconnecting vpn" 
+	echo -e $(expressvpn connect) 
+fi
+
+# get local IP addres
+IP=$(ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1' )
+echo -e "VPN status" $(expressvpn status)
+echo -e "external IP address" $IP
+
+# get external IP addres
+IP="$(curl -s ipinfo.io/ip)"
+echo -e "VPN status" $(expressvpn status)
+echo -e "external IP address" $IP

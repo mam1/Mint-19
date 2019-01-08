@@ -1,0 +1,5 @@
+SHELL=/bin/bash
+PATH=/usr/local/myscripts:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=mam1@cornell.edu
+
+* * * * * mam1 echo hit >> /media/Logs/bkup-log.log
