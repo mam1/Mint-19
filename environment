@@ -1,1 +1,4 @@
-PATH="/usr/local/myscripts:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+PATH=/home/mam1/Git/HAS/esp8266-toolchain/xtensa-lx106-elf/bin:/usr/local/myscripts:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+IDF_PATH=/home/mam1/Git/HAS/ESP8266_RTOS_SDK
+SDK_PATH=/home/mam1/Git/HAS/ESP8266_RTOS_SDK
+BIN_PATH=/home/mam1/Git/HAS/esp8266_bin
