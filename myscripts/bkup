@@ -3,6 +3,8 @@
 # backup Blackhole, Abyss, Images, and Logs
 # run from /etc/cron.daily
 #
+# must be run as root
+#
 
 echo '********************************************************' >> /media/Logs/bkup-log.log
 echo '**** BlackHole backup started  - ' $(date) >> /media/Logs/bkup-log.log
@@ -32,5 +34,5 @@ echo '**** Images backup finished - ' $(date) >> /media/Logs/bkup-log.log 2>&1
 # sleep 2
 # umount -v /media/Logs_bkup
 # echo '**** Logs backup finished - ' $(date) >> /media/Logs/bkup-log.log 2>&1
-echo  '**** all backups complete - normal termination\n' >> /media/Logs/bkup-log.log
-echo  '**** all backups complete - normal termination\n'
+echo  '**** all backups complete - ' $(date) '\nnormal termination\n' >> /media/Logs/bkup-log.log
+echo  '**** all backups complete - ' $(date) '\nnormal termination\n'
