@@ -1,0 +1,5 @@
+#!/bin/bash
+#
+#	back up primary hard disks
+#
+bkup
