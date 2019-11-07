@@ -1,9 +1,11 @@
 #!/bin/bash
-#
-# backup Blackhole, Abyss, Images, and Logs
-#
+
 
 # move the scripts to script library and fix permissions
+	rsync -avz /home/mam1/Git/HAS/bash_scripts/MintOSX/ /usr/local/myscripts/
 	rsync -avz /home/mam1/Git/Mint-19/myscripts/ /usr/local/myscripts/
+	rsync -avz /home/mam1/Git/Pcon-TNG/script_lib/daemon/ /usr/local/myscripts/
+
+
 	chown mam1 /usr/local/myscripts/*		# change owner
 	chmod 777 /usr/local/myscripts/*		# open access

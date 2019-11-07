@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# backup Diamond Tail to DropBox
+#
+# must be run as root
+#
+sudo rsync   -avH  --delete    '/home/mam1/Dropbox/Diamon Tail house/' '/media/Abyss/Documents/Diamond Tail house/'

@@ -1,0 +1,44 @@
+#!/bin/sh
+#
+# backup Blackhole, Abyss, Images, and Logs
+# run from /etc/cron.daily
+#
+# must be run as root
+#
+
+echo '********************************************************' >> /media/Logs/bkup-log.log
+echo '**** BlackHole backup started  - ' $(date) >> /media/Logs/bkup-log.log
+mount -lv UUID=6bb923c4-6ee3-4623-bdf9-a3a9d06a6b9b  /media/BlackHole_bkup >> /media/Logs/bkup-log.log
+
+rsync   -avH  --delete   /media/BlackHole_bkup/ /media/BlackHole/ >> /media/Logs/bkup-log.log
+
+sleep 2
+umount -lv /media/BlackHole_bkup  >> /media/Logs/bkup-log.log 2>&1
+echo '**** BlackHole backup finished - ' $(date) >> /media/Logs/bkup-log.log
+
+echo  '**** Abyss backup started  - ' $(date)>> /media/Logs/bkup-log.log
+mount -lv UUID=affc284d-5f53-4353-81d3-eb22f45856ad  /media/Abyss_bkup >> /media/Logs/bkup-log.log
+
+rsync   -avH  --delete   /media/Abyss_bkup/ /media/Abyss/ >> /media/Logs/bkup-log.log
+
+sleep 2
+umount -lv /media/Abyss_bkup  >> /media/Logs/bkup-log.log 2>&1
+echo '**** Abyss backup finished - ' $(date) >> /media/Logs/bkup-log.log
+
+echo  '**** Images backup started  - ' $(date)>> /media/Logs/bkup-log.log
+mount -lv UUID=8b94a070-47f6-42e1-b118-977ee24cc3ea  /media/Images_bkup >> /media/Logs/bkup-log.log 2>&1
+
+rsync   -avH  --delete  /media/Images_bkup/  /media/Images/ >> /media/Logs/bkup-log.log
+
+sleep 2
+umount -lv /media/Images_bkup  >> /media/Logs/bkup-log.log 2>&1
+echo '**** Images backup finished - ' $(date) >> /media/Logs/bkup-log.log 2>&1
+
+# echo '**** Logs backup started  - ' $(date) >> /media/Logs/bkup-log.log
+# mount -lv UUID=69e4e0f1-9d85-4036-b62f-823b6fef4b8e  /media/Logs_bkup >> /media/Logs/bkup-log.log
+# # # rsync   -avH  --delete   /media/mam1/Logs/ /media/mam1/Logs_bkup/ >> /media/Logs/bkup-log.log
+# sleep 2
+# umount -v /media/Logs_bkup
+# echo '**** Logs backup finished - ' $(date) >> /media/Logs/bkup-log.log 2>&1
+echo  '**** all backups complete - ' $(date) '\nnormal termination\n' >> /media/Logs/bkup-log.log
+echo  '**** all backups complete - ' $(date) '\nnormal termination\n'
