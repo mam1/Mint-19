@@ -7,5 +7,5 @@
 	rsync -avz /home/mam1/Git/Pcon-TNG/script_lib/daemon/ /usr/local/myscripts/
 	rsync -avz /home/mam1/Git/Pcon-TNG/script_lib/OSXMint/ /usr/local/myscripts/
 
-	chown mam1 /usr/local/myscripts/*		# change owner
-	chmod 777 /usr/local/myscripts/*		# open access
+	chown mam1:mam1 /usr/local/myscripts/*		# change owner
+	chmod 777 /usr/local/myscripts/*		    # open access
